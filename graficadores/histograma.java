@@ -9,7 +9,6 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.BorderFactory;
-import javax.swing.JFrame;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
@@ -19,7 +18,6 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.chart.title.TextTitle;
-import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
@@ -41,7 +39,7 @@ public class histograma {
         
         XYSeriesCollection datos = new XYSeriesCollection ();
         
-        var serieXY = new XYSeries(nombreDatos);
+        XYSeries serieXY = new XYSeries(nombreDatos);
         
         for (int i = 0; i < listaNumerosEjeX.length; i++) {
             serieXY.add(listaNumerosEjeX[i],listaNumerosEjeY[i]);
@@ -54,7 +52,7 @@ public class histograma {
         
         
         XYPlot linea = grafico.getXYPlot();
-        var estilos = new XYLineAndShapeRenderer();
+        XYLineAndShapeRenderer estilos = new XYLineAndShapeRenderer();
         estilos.setSeriesPaint(0, Color.RED);
         estilos.setSeriesStroke(0, new BasicStroke(2.0f));
         linea.setRenderer(estilos);
@@ -82,7 +80,6 @@ public class histograma {
         }
         
         ChartPanel graficoParaPanel = new ChartPanel(grafico);
-        
         return graficoParaPanel;      
     }
 
