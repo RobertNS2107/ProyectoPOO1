@@ -29,7 +29,7 @@ public class Sismo {
         /* La fecha por obligacion tiene que venir en formato aaaa-mm-dd, y 
         específicamente separado con un "-", tambien los mese y días tienen que son menores a 10 tienen que venir con 0
         */
-        this.fecha = fecha;
+        this.fecha = converir(fecha);
         this.hora = hora;
         this.magnitud = magnitud;
         this.profundidad = profundidad;
@@ -38,6 +38,43 @@ public class Sismo {
         this.reportado = reportado;
         this.latitud = latitud;
         this.longitud = longitud;
+    }
+    private String converir(String fecha){
+        fecha.replaceAll(" ", "");
+        String[] lista = fecha.split("-");
+        
+        String mes = lista[1];
+        
+        switch (mes){
+            case "Jan":
+                lista[1] = "01";
+            case "Feb":
+                lista[1] = "02";
+            case "Mar":
+                lista[1] = "03";
+            case "Apr":
+                lista[1] = "04";
+            case "May":
+                lista[1] = "05";
+            case "Jun":
+                lista[1] = "06";
+            case "Jul":
+                lista[1] = "07";
+            case "Aug":
+                lista[1] = "08";
+            case "Sep":
+                lista[1] = "09";
+            case "Oct":
+                lista[1] = "10";
+            case "Nov":
+                lista[1] = "11";
+            case "Dec":
+                lista[1] = "12";
+        }
+        
+        
+        return lista[2]+"-"+lista[1]+"-"+lista[0];
+    
     }
 
     @Override
