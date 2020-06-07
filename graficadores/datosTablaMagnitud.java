@@ -1,20 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package graficadores;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
 public class datosTablaMagnitud {
     
+    /** 
+    *Constructor de los datos para la tabla ordena por fecha
+    * @param listaSismos ArrayList de tipo Sismo 
+    * @return String[][] 
+    */
     public String[][]  clasificar(ArrayList<Sismo> listaSismos){
-        
+
         String[] micro; 
         String[] menor;
         String[] ligero;

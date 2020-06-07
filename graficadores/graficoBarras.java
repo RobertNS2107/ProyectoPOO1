@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package graficadores;
 
 import org.jfree.chart.ChartFactory;
@@ -13,22 +9,27 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 
-/**
- *
- * @author Usuario
- */
-
-//La documentacion de esta clase es la misma que la del graficoPastel
 
 public class graficoBarras {
      private float[] listaNumeros; 
      private String[] listaPalabras;
-     
+     /**
+     *@param listaNumeros float[]
+     *@param listaPalabras String[] 
+     */
      public graficoBarras(float[] listaNumeros, String[] listaPalabras) {
         this.listaNumeros = listaNumeros;
         this.listaPalabras = listaPalabras;
     }
     
+     
+     /**
+     *@param titulo String 
+     *@param mostrar bolean , si es true muestra la ventana
+     *@param datosHorizontales String  Nombre de los datos horizontales
+     *@param datosVerticales String  Nombre de los datos verticales
+     *@return ChartPanel para agregarlo a otra ventana en caso de requerirlo
+     */
     public ChartPanel graficar(String titulo,boolean mostrar, String datosHorizontales, String datosVerticales){
         
         DefaultCategoryDataset  datos = new DefaultCategoryDataset();

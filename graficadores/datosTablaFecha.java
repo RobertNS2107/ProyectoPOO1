@@ -1,21 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package graficadores;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Usuario
- */
+
 public class datosTablaFecha {
-    /* La fecha por obligacion tiene que venir en formato aaaa-mm-dd, y 
-    específicamente separado con un "-", tambien los mese y días tienen que son menores a 10 tienen que venir con 0
+
+    /** 
+    *Constructor de los datos para la tabla ordena por fecha
+    * @param listaSismos ArrayList de tipo Sismo 
+    * @param fechaF String 
+    * @param fechaIn String 
+    * @return String[][]
+    * Utiliza una funcion privada para comparar las fechas
     */
     public String[][]  clasificar(ArrayList<Sismo> listaSismos, String fechaIn, String fechaF){
+
         String[] fechaInicio = fechaIn.split("-");
         String[] fechaFin = fechaF.split("-");
         
@@ -42,6 +42,7 @@ public class datosTablaFecha {
     }
     
     private boolean compararFechas(String[] fechaInicio, String[] fechaFin, String[] fechaComparar){
+        /**Funcion que compara tres fechas para determinar si se encuentrar dentro de un rango en específico*/
         if(Integer.parseInt(fechaInicio[0].replaceAll(" ", "")) <  Integer.parseInt(fechaComparar[0].replaceAll(" ", "")) && 
                     Integer.parseInt(fechaFin[0].replaceAll(" ", "")) >  Integer.parseInt(fechaComparar[0].replaceAll(" ", "")))
             return true;

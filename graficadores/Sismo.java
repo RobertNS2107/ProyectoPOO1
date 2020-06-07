@@ -1,20 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package graficadores;
 
-/**
- *
- * @author Usuario
- */
 public class Sismo {
     private String fecha;
-    /* La fecha por obligacion tiene que venir en formato aaaa-mm-dd, y 
-    específicamente separado con un "-", tambien los mese y días tienen que son menores a 10 tienen que venir con 0
-    */
-    
+
     private String hora;
     private float magnitud;
     private float profundidad;
@@ -23,12 +12,21 @@ public class Sismo {
     private String reportado;
     private float latitud;
     private float longitud;
-
-
+    
+    /**
+    *Constructor del objeto
+    *@param fecha String 
+    *@param hora String 
+    *@param magnitud float 
+    *@param profundidad float 
+    *@param localizacion String 
+    *@param origen String 
+    *@param reportado String 
+    *@param latitud float 
+    *@param longitud float 
+    */
     public Sismo(String fecha, String hora, float magnitud, float profundidad, String localizacion, String origen, String reportado, float latitud, float longitud) {
-        /* La fecha por obligacion tiene que venir en formato aaaa-mm-dd, y 
-        específicamente separado con un "-", tambien los mese y días tienen que son menores a 10 tienen que venir con 0
-        */
+        
         this.fecha = converir(fecha);
         this.hora = hora;
         this.magnitud = magnitud;
@@ -40,6 +38,7 @@ public class Sismo {
         this.longitud = longitud;
     }
     private String converir(String fecha){
+        
         fecha.replaceAll(" ", "");
         String[] lista = fecha.split("-");
         
@@ -77,15 +76,23 @@ public class Sismo {
     
     }
 
+    /**
+    *@return retorna un string en formato html
+    */
     @Override
     public String toString() {
+        
         return "<html>Fecha:" + fecha + "<p> Hora:" + hora + "<p> Magnitud:" 
                 + magnitud + "<p> Profundidad:" + profundidad + "<p> Localizacion:" 
                 + localizacion + "<p> Origen:" + origen + "<p> Reportado:" + reportado 
                 + "<p> Latitud:" + latitud + "<p> Longitud:" + longitud +" <html>";
     }
-    
+    /**
+    *@return retorna un string con los datos del objeto pegados mediante una forma específica
+    * que se utiliza en una función en específica
+    */
     public String toStringPegado(){
+        
         return fecha + "mmmmm" + hora + "mmmmm" + magnitud + "mmmmm" +  profundidad + "mmmmm" + localizacion
                 + "mmmmm" + origen + "mmmmm" + reportado + "mmmmm" + latitud + "mmmmm" + longitud;
     }

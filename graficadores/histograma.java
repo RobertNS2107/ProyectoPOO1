@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package graficadores;
 
 import java.awt.BasicStroke;
@@ -21,21 +16,31 @@ import org.jfree.chart.title.TextTitle;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 
-/**
- *
- * @author Usuario
- */
+
 public class histograma {
-    private float[] listaNumerosEjeX; //representan los números de eje X
+    private float[] listaNumerosEjeX; 
     private float[] listaNumerosEjeY; 
 
+    
+    /**
+    *@param listaNumerosEjeX float[] 
+    *@param listaNumerosEjeY float[]  
+    */
     public histograma(float[] listaNumerosEjeX, float[] listaNumerosEjeY) {
         this.listaNumerosEjeX = listaNumerosEjeX;
         this.listaNumerosEjeY = listaNumerosEjeY;
     }
     
-    
+    /**
+    *@param titulo String 
+    *@param mostrar bolean , si es true muestra la ventana
+    *@param nombreEJeX String 
+    *@param nombreEJeY String 
+    *@param nombreDatos String 
+    *@return ChartPanel para agregarlo a otra ventana en caso de requerirlo
+    */
     public ChartPanel graficar(String titulo, boolean mostrar, String nombreEJeX,String nombreEJeY, String nombreDatos){
+
         
         XYSeriesCollection datos = new XYSeriesCollection ();
         
